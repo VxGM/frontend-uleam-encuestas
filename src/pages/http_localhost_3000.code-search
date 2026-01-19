@@ -1,0 +1,31 @@
+# Query: http://localhost:3000
+
+14 results - 7 files
+
+src\pages\Cafeteria.jsx:
+  24:       const respuesta = await fetch('https://api-uleam.onrender.com/api/opinion', {
+
+src\pages\Dashboard.jsx:
+  32:       const res = await fetch(`https://api-uleam.onrender.com/api/pendientes?email=${email}`);
+
+src\pages\Encuesta.jsx:
+  21:       const respuesta = await fetch('https://api-uleam.onrender.com/api/votar', {
+
+src\pages\GestionUsuarios.jsx:
+  21:       const res = await fetch('https://api-uleam.onrender.com/api/usuarios');
+  34:     await fetch('https://api-uleam.onrender.com/api/usuarios', {
+  49:     await fetch(`https://api-uleam.onrender.com/api/usuarios/${id}`, { method: 'DELETE' });
+  61:     await fetch(`https://api-uleam.onrender.com/api/usuarios/${id}/rol`, {
+
+src\pages\Laboratorios.jsx:
+  28:       const respuesta = await fetch('https://api-uleam.onrender.com/api/opinion', {
+
+src\pages\Login.jsx:
+  27:       const respuesta = await fetch('https://api-uleam.onrender.com/api/login', {
+
+src\pages\Resultados.jsx:
+  20:      fetch('https://api-uleam.onrender.com/api/resultados')
+  42:     fetch('https://api-uleam.onrender.com/api/opiniones')
+  73:     await fetch('https://api-uleam.onrender.com/api/votos', { method: 'DELETE' });
+  82:     await fetch(`https://api-uleam.onrender.com/api/opiniones/${id}`, { method: 'DELETE' });
+  91:       await fetch(`https://api-uleam.onrender.com/api/opiniones-reset?categoria=${categoria}`, { method: 'DELETE' });

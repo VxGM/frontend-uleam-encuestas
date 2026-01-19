@@ -29,7 +29,7 @@ function Dashboard() {
 
   const cargarEstado = async (email) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/pendientes?email=${email}`);
+      const res = await fetch(`https://api-uleam.onrender.com/api/pendientes?email=${email}`);
       const data = await res.json();
       setEstado(data.estado);
       setNumPendientes(data.pendientes); 

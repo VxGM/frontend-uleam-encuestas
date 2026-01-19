@@ -17,7 +17,7 @@ function Resultados() {
   // --- CARGA DE DATOS ---
   const cargarDatos = () => {
      // 1. VOTOS
-     fetch('http://localhost:3000/api/resultados')
+     fetch('https://api-uleam.onrender.com/api/resultados')
      .then(res => res.json())
      .then(data => {
          const etiquetas = data.map(d => {
@@ -39,7 +39,7 @@ function Resultados() {
      });
 
     // 2. OPINIONES
-    fetch('http://localhost:3000/api/opiniones')
+    fetch('https://api-uleam.onrender.com/api/opiniones')
      .then(res => res.json())
      .then(data => {
          setListaOpiniones(data);
@@ -70,7 +70,7 @@ function Resultados() {
   // 1. Borrar Votos (Reiniciar Elecciones)
   const handleBorrarVotos = async () => {
     if (!window.confirm("⚠️ ¿REINICIAR ELECCIONES?\nSe borrarán todos los votos.")) return;
-    await fetch('http://localhost:3000/api/votos', { method: 'DELETE' });
+    await fetch('https://api-uleam.onrender.com/api/votos', { method: 'DELETE' });
     alert("Elecciones reiniciadas.");
     cargarDatos(); // Recargar sin refrescar página
   };
@@ -79,7 +79,7 @@ function Resultados() {
   const handleBorrarOpinion = async (id) => {
     if(!window.confirm("¿Borrar este comentario?")) return;
     
-    await fetch(`http://localhost:3000/api/opiniones/${id}`, { method: 'DELETE' });
+    await fetch(`https://api-uleam.onrender.com/api/opiniones/${id}`, { method: 'DELETE' });
     cargarDatos();
   };
 
@@ -88,7 +88,7 @@ function Resultados() {
       const nombre = categoria === 'cafeteria' ? 'Cafetería' : 'Laboratorios';
       if(!window.confirm(`⚠️ ¿Estás seguro de BORRAR TODAS las opiniones de ${nombre}?`)) return;
 
-      await fetch(`http://localhost:3000/api/opiniones-reset?categoria=${categoria}`, { method: 'DELETE' });
+      await fetch(`https://api-uleam.onrender.com/api/opiniones-reset?categoria=${categoria}`, { method: 'DELETE' });
       alert(`Se han eliminado las opiniones de ${nombre}.`);
       cargarDatos();
   };

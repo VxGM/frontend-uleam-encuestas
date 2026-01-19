@@ -18,7 +18,7 @@ function Encuesta() {
     }
 
     try {
-      const respuesta = await fetch('http://localhost:3000/api/votar', {
+      const respuesta = await fetch('https://api-uleam.onrender.com/api/votar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

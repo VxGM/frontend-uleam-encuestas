@@ -18,7 +18,7 @@ function GestionUsuarios() {
 
   const cargarUsuarios = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/usuarios');
+      const res = await fetch('https://api-uleam.onrender.com/api/usuarios');
       const data = await res.json();
       setUsuarios(data);
     } catch (error) {
@@ -31,7 +31,7 @@ function GestionUsuarios() {
     e.preventDefault();
     if(!nuevoEmail || !nuevoPass) return alert("Completa los datos");
 
-    await fetch('http://localhost:3000/api/usuarios', {
+    await fetch('https://api-uleam.onrender.com/api/usuarios', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({ email: nuevoEmail, password: nuevoPass, rol: nuevoRol })
@@ -46,7 +46,7 @@ function GestionUsuarios() {
   const handleEliminar = async (id) => {
     if(!window.confirm("¿Seguro de eliminar este usuario?")) return;
     
-    await fetch(`http://localhost:3000/api/usuarios/${id}`, { method: 'DELETE' });
+    await fetch(`https://api-uleam.onrender.com/api/usuarios/${id}`, { method: 'DELETE' });
     cargarUsuarios();
   };
 
@@ -58,7 +58,7 @@ function GestionUsuarios() {
     else if (rolActual === 'profesor') rolNuevo = 'admin';
     else if (rolActual === 'admin') rolNuevo = 'estudiante';
     
-    await fetch(`http://localhost:3000/api/usuarios/${id}/rol`, {
+    await fetch(`https://api-uleam.onrender.com/api/usuarios/${id}/rol`, {
         method: 'PUT',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({ nuevoRol: rolNuevo })

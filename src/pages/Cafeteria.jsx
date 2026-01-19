@@ -21,7 +21,7 @@ function Cafeteria() {
     }
 
     try {
-      const respuesta = await fetch('http://localhost:3000/api/opinion', {
+      const respuesta = await fetch('https://api-uleam.onrender.com/api/opinion', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
